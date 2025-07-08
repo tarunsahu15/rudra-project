@@ -1,13 +1,13 @@
 import { io } from 'socket.io-client';
 
 export const initSocket = async () => {
-    console.log('Socket.IO connecting to:', process.env.REACT_APP_BACKEND_URL);
+    console.log('Socket.IO connecting to:', 'https://rudra-project-b9bm.onrender.com/');
     const options = {
         'force new connection': true,
         reconnectionAttempt: 'Infinity',
         timeout: 10000,
         transports: ['websocket'],
     };
-    const url = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5001'; // Fallback
+    const url = 'https://rudra-project-b9bm.onrender.com/'; // Fallback
     return io(url, options);
 };
